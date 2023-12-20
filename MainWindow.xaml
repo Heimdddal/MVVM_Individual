@@ -1,0 +1,60 @@
+﻿<Window x:Class="MVVM_Individual.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVM_Individual"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" MinHeight="30">
+                <TextBlock Text="Размер матриц:" FontSize="14"></TextBlock>
+                <TextBox Text="{Binding Path= model.MatrixSize, UpdateSourceTrigger=PropertyChanged}" Width="100" FontSize="18"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" MinHeight="30">
+                <TextBlock Text="Множитель матрицы:" FontSize="14"></TextBlock>
+                <TextBox Text="{Binding Path= model.MatrixMultiplier, UpdateSourceTrigger=PropertyChanged}" Width="100" FontSize="18"></TextBox>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <TextBlock Text="Матрица 1" HorizontalAlignment="Center"/>
+            <TextBlock Name="Matrix1" Text="{Binding Path = model.Matrix1, Mode=OneWay}" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="2">
+            <TextBlock Text="Матрица 2" HorizontalAlignment="Center"/>
+            <TextBlock Name="Matrix2" Text="{Binding Path=model.Matrix2, Mode=OneWay}" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <TextBlock Text="Сумма элементов" HorizontalAlignment="Center"/>
+            <TextBlock Name="Sum" Text="{Binding Path=model.SumOfElements , Mode=OneWay}" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBlock Text="Сумма матриц" HorizontalAlignment="Center"/>
+            <TextBlock Name="MatrixSum" Text="{Binding Path=model.AddMatrix , Mode=OneWay}" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <TextBlock Text="Вычитание матриц" HorizontalAlignment="Center"/>
+            <TextBlock Name="MatrixSubstract" Text="{Binding Path=model.SubMatrix , Mode=OneWay}" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0">
+            <TextBlock Text="Умножение матрицы на число" HorizontalAlignment="Center"/>
+            <TextBlock Name="MatrixMultiplyByNumber" Text="{Binding Path=model.MultiplyByNumber , Mode=OneWay}" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2">
+            <TextBlock Text="Умножение матриц" HorizontalAlignment="Center"/>
+            <TextBlock Name="MatrixMultiply" Text="{Binding Path=model.MulMatrix , Mode=OneWay}" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>
